@@ -385,6 +385,69 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             // Add your button5 click event logic here, or leave empty if not needed.
+            string accountNumber = textBox5.Text;
+
+            if (string.IsNullOrWhiteSpace(accountNumber))
+            {
+                MessageBox.Show("Please enter a valid account number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nalla\\Documents\\bankserver.mdf;Integrated Security=True;Connect Timeout=30";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                try
+                {
+                    // Check if there are any loans in "Approved" status that are not cleared
+                    string loanQuery = "SELECT COUNT(*) FROM LoanApplications WHERE AccountNumber = @AccountNumber AND Status = 'Approved'";
+                    using (SqlCommand loanCommand = new SqlCommand(loanQuery, connection))
+                    {
+                        loanCommand.Parameters.AddWithValue("@AccountNumber", accountNumber);
+                        int loanCount = (int)loanCommand.ExecuteScalar();
+
+                        if (loanCount > 0)
+                        {
+                            MessageBox.Show("There are loans in 'Uncleared' status for this account. The account cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // Check if there is any amount in the account in the coust table
+                    string balanceQuery = "SELECT amount FROM coust WHERE acc = @AccountNumber";
+                    using (SqlCommand balanceCommand = new SqlCommand(balanceQuery, connection))
+                    {
+                        balanceCommand.Parameters.AddWithValue("@AccountNumber", accountNumber);
+                        object balanceResult = balanceCommand.ExecuteScalar();
+
+                        if (balanceResult != null && balanceResult != DBNull.Value)
+                        {
+                            decimal balance = (decimal)balanceResult;
+
+                            if (balance > 0)
+                            {
+                                MessageBox.Show($"An amount of {balance:C} has been debited from account number {accountNumber}. The account will now be deleted.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+
+                    // Proceed to delete the account from all tables if there are no approved loans
+                    string deleteFromCoust = "DELETE FROM coust WHERE acc = @AccountNumber";
+                    using (SqlCommand deleteCommand = new SqlCommand(deleteFromCoust, connection))
+                    {
+                        deleteCommand.Parameters.AddWithValue("@AccountNumber", accountNumber);
+                        deleteCommand.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Account and associated details have been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
         private void Form2_Load(object sender, EventArgs e)
         {

@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
 
                             dataGridViewNotifications.DataSource = notificationsTable;
                             dataGridViewNotifications.Visible = true; // Show notifications DataGridView
+                            button5.Visible = true;
                         }
                     }
                 }
@@ -178,6 +179,7 @@ namespace WindowsFormsApp1
             panel1.Visible = false;
             panel2.Visible = true;
             panel3.Visible = false;
+            button5.Visible = false;
             dataGridViewNotifications.Visible = false; // Hide notifications DataGridView initially
 
         }
@@ -252,6 +254,7 @@ namespace WindowsFormsApp1
             textBox8.Text = label22.Text;
             textBox9.Text = label23.Text;
             textBox10.Text = label24.Text;
+            textBox2.Text = label18.Text;
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -370,6 +373,17 @@ namespace WindowsFormsApp1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            dataGridViewNotifications.Visible = false;
+            button5.Visible = false;
         }
     }
 }

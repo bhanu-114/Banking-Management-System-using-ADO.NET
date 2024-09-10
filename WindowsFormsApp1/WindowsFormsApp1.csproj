@@ -237,6 +237,34 @@
   <ItemGroup>
     <None Include="Resources\creditcard.jpg" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Output\account creation.png" />
+    <Content Include="Output\account deletion.png" />
+    <Content Include="Output\creditcard.png" />
+    <Content Include="Output\customer download details.png" />
+    <Content Include="Output\customer edit details.png" />
+    <Content Include="Output\customer.png" />
+    <Content Include="Output\customerlogin.png" />
+    <Content Include="Output\debitcard.png" />
+    <Content Include="Output\employee.png" />
+    <Content Include="Output\employeelogin.png" />
+    <Content Include="Output\employeeregistration.png" />
+    <Content Include="Output\home.png" />
+    <Content Include="Output\loan applied.png" />
+    <Content Include="Output\loan apply.png" />
+    <Content Include="Output\loan repayement.png" />
+    <Content Include="Output\loanapproval process.png" />
+    <Content Include="Output\logins.png" />
+    <Content Include="Output\manager approve loan.png" />
+    <Content Include="Output\manager loan rejection.png" />
+    <Content Include="Output\manager.png" />
+    <Content Include="Output\managerlogin.png" />
+    <Content Include="Output\managerregister.png" />
+    <Content Include="Output\managerregisterinvalid.png" />
+    <Content Include="Output\services deposit.png" />
+    <Content Include="Output\withdraw.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

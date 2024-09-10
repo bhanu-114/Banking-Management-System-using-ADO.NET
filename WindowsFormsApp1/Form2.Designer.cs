@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,6 +110,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(357, 1080);
             this.panel1.TabIndex = 0;
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.button;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(74, 553);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(189, 47);
+            this.button10.TabIndex = 55;
+            this.button10.Text = "Loans";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -726,18 +738,6 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "xxxxxx xxxx xxxx xxxx xxxx";
             // 
-            // button10
-            // 
-            this.button10.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.button;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(74, 553);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(189, 47);
-            this.button10.TabIndex = 55;
-            this.button10.Text = "Loans";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -746,8 +746,8 @@
             this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);

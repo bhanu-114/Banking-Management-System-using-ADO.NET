@@ -93,6 +93,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotifications)).BeginInit();
             this.panel3.SuspendLayout();
@@ -110,6 +111,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.dataGridViewNotifications);
             this.panel1.Controls.Add(this.buttonNotifications);
             this.panel1.Controls.Add(this.panel3);
@@ -191,7 +193,7 @@
             this.panel3.Controls.Add(this.label28);
             this.panel3.Controls.Add(this.label27);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(34, 22);
+            this.panel3.Location = new System.Drawing.Point(0, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(747, 640);
             this.panel3.TabIndex = 47;
@@ -227,8 +229,9 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(160, 47);
             this.button8.TabIndex = 67;
-            this.button8.Text = "Clear";
+            this.button8.Text = "Cancel";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // buttonSubmitChanges
             // 
@@ -877,6 +880,18 @@
             this.pictureBox2.TabIndex = 45;
             this.pictureBox2.TabStop = false;
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(1431, 610);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(130, 39);
+            this.button5.TabIndex = 50;
+            this.button5.Text = "Close";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -967,5 +982,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button buttonNotifications;
         private System.Windows.Forms.DataGridView dataGridViewNotifications;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -228,6 +228,13 @@ namespace WindowsFormsApp1
             employereg employereg = new employereg();
             employereg.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form4 f = new Form4();
+            f.ShowDialog();
+        }
     }
     
 }
