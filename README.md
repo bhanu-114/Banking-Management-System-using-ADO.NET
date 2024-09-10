@@ -27,11 +27,16 @@ The Banking Management System is an integrated desktop-based application develop
 
 Features
 
-Customer Registration: Create a new customer with account validation, which also verifies a mobile number and a PIN code. Loan Management: Provide a facility to customers for applying for loans and to employees for approving loans, considering the interest rate according to the type of loan the customer has selected.
+Customer Registration: Create a new customer with account validation, which also verifies a mobile number and a PIN code.
+
+Loan Management: Provide a facility to customers for applying for loans and to employees for approving loans, considering the interest rate according to the type of loan the customer has selected.
 
 Credit Score Calculation: Automatically calculate the credit score of a customer based on his payment history and financial reputation, and display it. 
 
-Transaction Management: Debit and credit amount in a customer's account. Notification: Notify the customer about loan approval or rejection and other bank-related activities via SMS or email.
+Transaction Management: Debit and credit amount in a customer's account.
+
+Notification: Notify the customer about loan approval or rejection and other bank-related activities via SMS or email.
+
 Upload of Documents: The customer can upload and view his/her documents, as in PDF or image formats, regarding loan process.
 
 Account Deletion: Customer accounts should be deleted if he/she has repaid the loan and has no outstanding transactions.
@@ -59,7 +64,6 @@ Notifications: Stores notifications of loan approvals and rejections, among othe
 BankNotifications: Stores bank messages and system-wide notifications.
 
 Sample Table Structure:
-sql
 
 Copy code
 
@@ -96,12 +100,12 @@ Setup Instructions
 
 Clone the repository:
 
-bash
-Copy code
 git clone [https://github.com/bhanu-114/Banking-Management-System-using-ADO.NET]
+
 Open the project:
 
 Open the solution file (.sln) in Visual Studio.
+
 Configure the database:
 
 The project uses SQL Server LocalDB. Ensure that the connection string in the App.config is correct:
