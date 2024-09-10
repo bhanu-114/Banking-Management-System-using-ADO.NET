@@ -98,7 +98,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/banking-management-system.git
+git clone [https://github.com/bhanu-114/Banking-Management-System-using-ADO.NET]
 Open the project:
 
 Open the solution file (.sln) in Visual Studio.
